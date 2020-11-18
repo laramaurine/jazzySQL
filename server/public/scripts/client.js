@@ -38,12 +38,12 @@ function sendSongToServer() {
     const songToSend = {title: $('#song-name').val(), 
                           // .val() will always return a string
                           length: $('#song-length').val(),
-                          released: $('#date-released').val()};
+                          date_released: $('#date-released').val()};
     console.log(songToSend);
     // Send the data to the server
     $.ajax({
         method: 'POST',
-        url: '/song',
+        url: '/songs',
         data: songToSend
     }).then(function(response) {
         // happy path
